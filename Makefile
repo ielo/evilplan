@@ -15,9 +15,9 @@ score-key:        ## sanity check: the key scored against itself must be 100%
 test:
 	PYTHONPATH=src python3 -m pytest -q
 
-MODELS ?= local-small
+MODELS ?= ollama_chat/qwen2.5-coder:7b
 RUNS ?= 1
-proxy:            ## LiteLLM gateway. Loads .env first. Note the port it prints.
+proxy:            ## OPTIONAL shared LiteLLM proxy. Loads .env first. Note the port it prints.
 	set -a; . ./.env; set +a; litellm --config litellm/config.yaml
-bench:            ## needs LITELLM_BASE_URL (proxy) or MODELS=ollama_chat/<model> for the direct path
+bench:            ## default path: MODELS=ollama_chat/<model>. Aliases like local-small need the proxy and LITELLM_BASE_URL
 	$(PY) ruleforge.bench --models $(MODELS) --runs $(RUNS)

@@ -1,5 +1,5 @@
-# LiteLLM proxy: one endpoint, many models. Start with: make proxy
-# Default is local, through Ollama. Hosted models are optional blocks at the bottom.
+# OPTIONAL LiteLLM proxy (make proxy). The default path does not need it: make bench MODELS=ollama_chat/<model>
+# Default is local, through Ollama. Hosted models are commented blocks, off until access is approved.
 model_list:
   - model_name: local-small            # fits a 16 GB Mac
     litellm_params:
