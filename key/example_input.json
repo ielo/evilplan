@@ -1,0 +1,9 @@
+{
+  "policy_version":"1.0", "action":"external_transfer", "requester_id":"wm-42",
+  "amount_usd":125000, "aggregate_amount_usd":125000,
+  "daily_external_total_usd":125000, "client_instruction_valid":true,
+  "aggregation_24h_verified":true, "destination_client_owned_verified":true,
+  "required_data_fresh_and_complete":true, "audit_evidence_ready":true,
+  "operations_release_verified":true,
+  "approvals":[{"role":"L1","actor_id":"lead-1","valid":true,"beneficiary":false,"initiator":false}]
+}

@@ -1,0 +1,35 @@
+rule_id,domain,implementation,status,review_note
+G-01,General,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+G-02,General,wealth_policy.rego,candidate_unapproved,requires trusted 24h aggregation
+G-03,General,wealth_policy.rego,candidate_unapproved,requires trusted approval freshness
+G-04,General,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+I-01,Investment,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+I-02,Investment,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+I-03,Investment,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+I-04,Investment,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+I-05,Investment,wealth_policy.rego,candidate_unapproved,tax classification ambiguous
+M-01,Money movement,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+M-02,Money movement,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+M-03,Money movement,wealth_policy.rego,candidate_unapproved,expedited path requires adjudication
+M-04,Money movement,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+M-05,Money movement,wealth_policy.rego,candidate_unapproved,jurisdiction risk list versioning required
+M-06,Money movement,wealth_policy.rego,candidate_unapproved,daily aggregate trusted upstream
+M-07,Money movement,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+O-01,Onboarding,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+O-02,Onboarding,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+O-03,Onboarding,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+O-04,Onboarding,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+O-05,Onboarding,wealth_policy.rego,candidate_unapproved,inactivity definition unresolved
+F-01,Fees,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+F-02,Fees,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+F-03,Fees,wealth_policy.rego,candidate_unapproved,90-day discount aggregation not fully tiered
+F-04,Fees,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+C-01,Controls,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+C-02,Controls,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+C-03,Controls,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+C-04,Controls,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+A-01,Audit,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+A-02,Audit,wealth_policy.rego,candidate_unapproved,monitoring evidence; not execution gate
+E-01,Exceptions,wealth_policy.rego,candidate_unapproved,exception scope requires adjudication
+E-02,Exceptions,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
+E-03,Exceptions,wealth_policy.rego,candidate_unapproved,Verify interpretation and trusted facts
