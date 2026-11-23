@@ -1,13 +1,23 @@
-# LiteLLM proxy: one endpoint, several models, spend tracking.
-# Run:  litellm --config litellm/config.yaml   then set LITELLM_BASE_URL=http://localhost:4000
+# LiteLLM proxy: one endpoint, many models. Start with: make proxy
+# Default is local, through Ollama. Hosted models are optional blocks at the bottom.
 model_list:
-  - model_name: haiku
-    litellm_params: { model: anthropic/claude-haiku-5-5, api_key: os.environ/ANTHROPIC_API_KEY }
-  - model_name: sonnet
-    litellm_params: { model: anthropic/claude-sonnet-5-5, api_key: os.environ/ANTHROPIC_API_KEY }
-  - model_name: opus
-    litellm_params: { model: anthropic/claude-opus-5-5, api_key: os.environ/ANTHROPIC_API_KEY }
-  - model_name: fable
-    litellm_params: { model: anthropic/claude-fable-5-2, api_key: os.environ/ANTHROPIC_API_KEY }
+  - model_name: local-small            # fits a 16 GB Mac
+    litellm_params:
+      model: ollama_chat/qwen2.5-coder:7b
+      api_base: http://localhost:11434
+      num_ctx: 16384                   # the default window would cut the policy text
+  # - model_name: local-large          # 32 GB or more
+  #   litellm_params:
+  #     model: ollama_chat/qwen2.5-coder:32b
+  #     api_base: http://localhost:11434
+  #     num_ctx: 16384
+
+  # Optional, when an approved route to hosted models exists. Swap the provider here, nothing else changes.
+  # - model_name: haiku
+  #   litellm_params: { model: anthropic/claude-haiku-5-5, api_key: os.environ/ANTHROPIC_API_KEY }
+  # - model_name: sonnet
+  #   litellm_params: { model: anthropic/claude-sonnet-5-5, api_key: os.environ/ANTHROPIC_API_KEY }
+  # - model_name: bedrock-sonnet
+  #   litellm_params: { model: bedrock/<model-id>, aws_region_name: us-east-1 }
 general_settings:
   master_key: os.environ/LITELLM_MASTER_KEY

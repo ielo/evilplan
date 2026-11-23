@@ -11,6 +11,15 @@ Rules:
 - Tag every rule with its policy rule ID (for example "M-02") in required_approvals and findings.
 - Never treat a requester supplied value as a trusted fact beyond what the contract says.
 - If the policy is ambiguous or two rules conflict, choose the stricter reading AND report it in doubts.
+Rego v1 syntax is mandatory. Start with `import rego.v1`. Every rule body needs `if`, sets use `contains`, membership uses `in`.
+Do not use the old style `allow { ... }` and do not use `default` as a variable name. Example:
+```
+package acme.wealth
+import rego.v1
+findings contains {"rule_id": "G-01", "kind": "hold", "detail": "..."} if { input.action == "x"; not input.ok }
+decision := "DENY" if { some f in findings; f.kind == "deny" }
+else := "ALLOW"
+```
 Reply with exactly two fenced blocks: ```rego ...``` with the full file, then ```json ...``` with a list of
 {"rule_id": str, "kind": "ambiguity"|"conflict"|"assumption", "note": str}."""
 
